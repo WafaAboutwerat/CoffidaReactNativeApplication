@@ -1,19 +1,11 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { StyleSheet, Text, ToastAndroid, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, ToastAndroid, TouchableOpacity, View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
+
 class Settings extends Component {
-
-constructor(props){
-  super(props);
-
-  this.state = {
-    token: ''
-  }
-}
-
 
 logout = async () => {
   let token = await AsyncStorage.getItem('@session_token');
@@ -27,7 +19,7 @@ logout = async () => {
   .then((response) => {
     if(response.status === 200){
       this.props.navigation.navigate("login");
-    }else {
+    }else  {
       throw 'something went wrong'
     }
   })
@@ -41,10 +33,17 @@ logout = async () => {
 
 
   render(){
+    const navigation = this.props.navigation;
+
     return (
-      <TouchableOpacity onpress={() => this.logout}>
+      <View>
+      <TouchableOpacity onpress={() => this.logout()} >
       <Text style={styles.buttontext}>Click here to logout</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')} >
+        <Text style={styles.Button}>Go Back</Text>
+      </TouchableOpacity>
+      </View>
     )
   };
 }
@@ -55,10 +54,22 @@ const styles = StyleSheet.create({
    backgroundColor: '#eee'
   },
 
+  Button: {
+    backgroundColor: '#03989e',
+    color: 'white',
+    width: 120,
+    height: 50,
+    textAlign: 'center',
+    borderRadius: 5,
+    marginTop: 300,
+    paddingTop:10,
+    marginLeft: 150
+  },
+
   buttontext: {
     fontSize: 30,
     color:'#03989e',
-    marginTop: 50,
+    marginTop: 100,
     textAlign: 'center'
    
 },

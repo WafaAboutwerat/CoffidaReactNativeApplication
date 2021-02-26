@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, {Component } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, ScrollView, Button, Alert } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, ScrollView, Alert } from 'react-native';
 
 import Header from './Header';
 

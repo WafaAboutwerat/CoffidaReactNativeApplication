@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import signUp from './components/signUp';
 import login from './components/login';
-import Tabs from './components/Tabs';
+import DrawNav from './components/DrawNav';
 
 
 const Stack = createStackNavigator();
@@ -19,7 +19,7 @@ class App extends Component {
         <Stack.Navigator>
            <Stack.Screen name="signUp" component={signUp} options={{headerShown: false}} />
            <Stack.Screen name="login" component={login} options={{headerShown: false}} />
-           <Stack.Screen name="Tabs" component={Tabs} options={{headerShown: false}} />
+           <Stack.Screen name="DrawNav" component={DrawNav} options={{headerShown: false}} />
         </Stack.Navigator>        
       </NavigationContainer>
     )

@@ -46,10 +46,11 @@ import Settings from './Settings';
       //   </Tab.Navigator>
 
 //const Tab = createBottomTabNavigator();
+
 const Drawer = createDrawerNavigator();
 
+class DrawNav extends Component {
 
-class Tabs extends Component {
   render(){
     return (
       <Drawer.Navigator>
@@ -71,4 +72,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Tabs
+export default DrawNav

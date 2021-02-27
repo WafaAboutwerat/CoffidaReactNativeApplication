@@ -19,8 +19,10 @@ logout = async () => {
   .then((response) => {
     if(response.status === 200){
       this.props.navigation.navigate("login");
-    }else  {
-      throw 'something went wrong'
+    } else if(response.status === 401){
+      throw 'Unauthorised'
+    } else if(response.status === 500){
+      throw 'server error'
     }
   })
   .catch((error) => {
@@ -29,15 +31,14 @@ logout = async () => {
   })
 }
 
-
-
-
   render(){
+
     const navigation = this.props.navigation;
 
     return (
       <View>
-      <TouchableOpacity onpress={() => this.logout()} >
+      <TouchableOpacity
+       onPress={() => this.logout()} >
       <Text style={styles.buttontext}>Click here to logout</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Home')} >
@@ -73,6 +74,6 @@ const styles = StyleSheet.create({
     textAlign: 'center'
    
 },
-});
+})
 
 export default Settings

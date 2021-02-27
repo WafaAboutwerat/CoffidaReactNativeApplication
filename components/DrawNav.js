@@ -10,6 +10,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Home from './Home';
 import MyAccount from './MyAccount';
 import Settings from './Settings';
+import tab from './tab';
 
 
 
@@ -55,8 +56,9 @@ class DrawNav extends Component {
     return (
       <Drawer.Navigator>
         <Drawer.Screen name="Home" component={Home}/>
-        <Drawer.Screen name="MyAccount" component={MyAccount}/>
+        <Drawer.Screen name="MyAccount" component={tab}/>
         <Drawer.Screen name="Settings" component={Settings}/>
+
       </Drawer.Navigator>
          
     );

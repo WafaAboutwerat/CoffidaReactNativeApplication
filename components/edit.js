@@ -8,7 +8,7 @@ class edit extends Component {
 
 render(){
     return(
- <Text>Edit informatin:</Text>
+ <Text style={styles.text}>Edit informatin:</Text>
     );
 }
 
@@ -20,7 +20,13 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#eee'
-    }
+    },
+    text:{
+        color: '#03989e' ,
+        fontSize: 30,
+        marginLeft: 20,
+        marginTop: 20
+        }
      });
     
      export default edit

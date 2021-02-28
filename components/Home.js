@@ -15,18 +15,14 @@ class Home extends Component {
 
   this.state = {
     isLoading: true,
-    locations: null
+    locations: null,
+    location_id: null
     }
   }
   componentDidMount(){
-    //this._unsubscribe = this.props.navigation.aadListener('focus', () => {
       this.getData()
-   // });
+  
   }
-
- // componentWillMount(){
-  //  this._unsubscribe();
- // }
 
 getData = async () => {
  const value = await AsyncStorage.getItem('@session_token');
@@ -72,11 +68,13 @@ getData = async () => {
 
       <FlatList
        data={this.state.locations}
-      renderItem={({item}) => (
+       renderItem={({item}) => (
+        <TouchableOpacity onPress={() => navigation.navigate('information', {location_id: item.location_id})}>
         <View style={{padding:20}}>
-          <Text style={styles.locationInfo}>{item.location_name}</Text>
-          <Text style={styles.rating}>Rating:{item.avg_overall_rating}</Text>
+          <Text>{item.location_name}</Text>
+          <Text>Rating:{item.avg_overall_rating}</Text>
           </View>
+          </TouchableOpacity>
       )}
       keyExtractor={(item) => item.location_id.toString()} />
       </View>)};}

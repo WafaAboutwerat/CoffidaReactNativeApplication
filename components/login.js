@@ -60,7 +60,6 @@ body: JSON.stringify(this.state)
           <TouchableOpacity  onPress={() => this.logIn()}>
             <Text style={styles.buttontext}>login</Text>
           </TouchableOpacity>
-    
         </ScrollView>
       </View>
     )

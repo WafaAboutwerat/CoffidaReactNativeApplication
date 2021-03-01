@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ToastAndroid, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-
-
-
 class MyAccount extends Component {
 constructor(props){
   super(props);
@@ -19,7 +15,6 @@ constructor(props){
   }
 }
 
-
 componentDidMount(){
   this.unsubscribe = this.props.navigation.addListener('focus', () => {
     this.getInfo()
@@ -29,7 +24,6 @@ componentDidMount(){
 componentWillUnmount(){
   this._unsubscribe();
 }
-
 
 getInfo = async () => {
   const ID = await AsyncStorage.getItem('@user_id');
@@ -83,15 +77,10 @@ getInfo = async () => {
       </TouchableOpacity>
       </ScrollView>
      </View>
-
-     
-      
-    
     );
   }
     
   };
-
 
 const styles = StyleSheet.create({
   container: {
@@ -118,6 +107,7 @@ const styles = StyleSheet.create({
     paddingTop:10,
     marginLeft: 150
   },
+
   text:{
   fontSize: 20,
   marginLeft: 20,

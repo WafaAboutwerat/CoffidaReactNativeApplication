@@ -6,7 +6,6 @@ import {StyleSheet} from 'react-native';
 import Home from './Home';
 import information from './information'
 
-
 const Stack = createStackNavigator();
 
 class stackNav extends Component {
@@ -20,10 +19,7 @@ render(){
      </Stack.Navigator>
     );
 }
-
-
 }
-
 
 const styles = StyleSheet.create({
     container: {

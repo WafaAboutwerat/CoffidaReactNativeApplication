@@ -102,7 +102,4 @@ render(){
         }
  })
 
-
-
-
 export default information 

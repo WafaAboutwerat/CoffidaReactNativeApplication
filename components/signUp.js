@@ -4,8 +4,6 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View, ScrollView, Alert 
 
 import Header from './Header';
 
-
-
 class signUp extends Component {
 
   constructor(props){
@@ -44,7 +42,6 @@ class signUp extends Component {
  })
 }
 
-
   render(){
     const navigation = this.props.navigation; 
     return (
@@ -62,11 +59,10 @@ class signUp extends Component {
         </TouchableOpacity>
 
         <TouchableOpacity
-        
-         onPress={() => navigation.navigate('login')}>
+        onPress={() => navigation.navigate('login')}>
             <Text style={styles.buttontext}>login</Text>
         </TouchableOpacity>
-       </ScrollView>
+        </ScrollView>
     </View>
     )
   };
@@ -88,8 +84,7 @@ const styles = StyleSheet.create({
      marginLeft: 50,
      marginTop: 20
  },
- 
- 
+
  buttonText: {
      fontSize: 22,
      color:'#03989e',
@@ -104,17 +99,13 @@ const styles = StyleSheet.create({
    marginTop: 5,
    textAlign: 'center',
    marginBottom: 25
-   
-  
  },
- 
  
  title: {
   fontSize: 27,
   color: '#03989e',
   textAlign: 'center',
   marginTop: 20
-
 }
 })
 

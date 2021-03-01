@@ -60,7 +60,7 @@ body: JSON.stringify(this.state)
           <TouchableOpacity  onPress={() => this.logIn()}>
             <Text style={styles.buttontext}>login</Text>
           </TouchableOpacity>
-        </ScrollView>
+          </ScrollView>
       </View>
     )
   };
@@ -84,19 +84,12 @@ const styles = StyleSheet.create({
 
  },
  
- 
  buttontext: {
    fontSize: 18,
    color:'#545454',
    marginTop: 5,
    textAlign: 'center',
-  
-  
  }
- 
- 
-
-
 })
 
 

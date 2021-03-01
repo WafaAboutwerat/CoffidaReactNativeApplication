@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, ToastAndroid, TouchableOpacity, View} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-
 class Settings extends Component {
 
 logout = async () => {
@@ -71,8 +69,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color:'#03989e',
     marginTop: 100,
-    textAlign: 'center'
-   
+    textAlign: 'center' 
 },
 })
 

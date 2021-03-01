@@ -12,7 +12,6 @@ const Tab = createBottomTabNavigator();
 
 class tab extends Component {
 
-
 render(){
     return(
         <Tab.Navigator
@@ -36,18 +35,12 @@ render(){
 
           }}
               >
-
-          
           <Tab.Screen name="MyAccount" component={MyAccount} />
           <Tab.Screen name="edit" component={edit} />
-          
-       </Tab.Navigator>
+        </Tab.Navigator>
     );
 }
-
-
 }
-
 
 const styles = StyleSheet.create({
     container: {

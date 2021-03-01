@@ -73,14 +73,12 @@ getData = async () => {
         <View style={{padding:20}}>
           <Text>{item.location_name}</Text>
           <Text>Rating:{item.avg_overall_rating}</Text>
-          </View>
-          </TouchableOpacity>
+        </View>
+         </TouchableOpacity>
       )}
       keyExtractor={(item) => item.location_id.toString()} />
       </View>)};}
       
-
-
 const styles = StyleSheet.create({
   container: {
    flex: 1,

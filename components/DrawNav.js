@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-
 import stackNav from './stackNav'
 import Settings from './Settings';
 import tab from './tab';
-
 
 const Drawer = createDrawerNavigator();
 
@@ -19,7 +17,6 @@ class DrawNav extends Component {
         <Drawer.Screen name="Home" component={stackNav}/>
         <Drawer.Screen name="MyAccount" component={tab}/>
         <Drawer.Screen name="Settings" component={Settings}/>
-
       </Drawer.Navigator>
          
     );

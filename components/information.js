@@ -1,8 +1,8 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import {Text, View, StyleSheet, ToastAndroid} from 'react-native';
+import {Text, View, StyleSheet, ToastAndroid, TouchableOpacity} from 'react-native';
 
-import {ScrollView} from 'react-native-gesture-handler';
+
 
 class information extends Component {
   constructor(props){
@@ -15,7 +15,9 @@ class information extends Component {
        location_town: '',
        avg_price_rating: '',
        avg_quality_rating: '',
-       avg_clenliness_rating: ''
+       avg_clenliness_rating: '',
+       reviews: null,
+       review_id: null
    }
   }
 
@@ -44,11 +46,13 @@ getData = async () => {
 .then((responseJson) => {
     this.setState({
         isLoading: false,
+        location_id:  responseJson.location_id,
         location_name: responseJson.location_name,
         location_town: responseJson.location_town,
         avg_price_rating: responseJson.avg_price_rating,
         avg_quality_rating: responseJson.avg_quality_rating,
-        avg_clenliness_rating: responseJson.avg_clenliness_rating
+        avg_clenliness_rating: responseJson.avg_clenliness_rating,
+        reviews: responseJson.location_reviews
     });
 })
 .catch((error) => {
@@ -61,7 +65,6 @@ render(){
     const navigation = this.props.navigation;
     return(
         <View>
-        <ScrollView>
         <Text style={styles.title}>location information:</Text>
         
            <Text style={styles.name}>{this.state.location_name}</Text>
@@ -69,8 +72,17 @@ render(){
             <Text style={styles.info}>price rating: {this.state.avg_price_rating}</Text>
             <Text style={styles.info}>quality rating: {this.state.avg_quality_rating}</Text>
             <Text style={styles.info}>cleanliness: {this.state.avg_clenliness_rating}</Text>
-            
-        </ScrollView>
+
+            <TouchableOpacity 
+             onPress={() => navigation.navigate('reviews', {location_id: this.state.location_id})}> 
+             <Text style={styles.link}>Click here to view the Reviews</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+             onPress={() => navigation.navigate('addReview', {location_id: this.state.location_id})}> 
+             <Text style={styles.link}>Click here to add a review</Text>
+            </TouchableOpacity>
+           
         </View>
     )
 };
@@ -93,13 +105,20 @@ render(){
         info: {
             marginTop: 20,
             marginLeft: 10,
-            fontSize: 15
+            fontSize: 20
         },
         name: {
             marginTop: 50,
             marginLeft: 10,
-            fontSize: 20
+            fontSize: 25
+        },
+        link:{
+            fontSize: 20,
+            color:'#03989e',
+            marginLeft: 20,
+            marginTop: 20
         }
+    
  })
 
 export default information 

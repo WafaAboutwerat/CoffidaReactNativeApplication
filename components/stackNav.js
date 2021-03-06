@@ -5,6 +5,8 @@ import {StyleSheet} from 'react-native';
 
 import Home from './Home';
 import information from './information'
+import reviews from './reviews'
+import addReview from './addReview'
 
 const Stack = createStackNavigator();
 
@@ -16,6 +18,8 @@ render(){
     <Stack.Navigator>
        <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
        <Stack.Screen name="information" component={information}/>
+       <Stack.Screen name="reviews" component={reviews}/>
+       <Stack.Screen name="addReview" component={addReview}/>
      </Stack.Navigator>
     );
 }

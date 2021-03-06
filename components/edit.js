@@ -47,7 +47,7 @@ updateFirstName = async () => {
 
 updateLastName = async () => {
   let to_send = {
-    first_name: this.state.firstName
+    last_name: this.state.lastName
   };
 
   const ID = await AsyncStorage.getItem('@user_id');
@@ -77,7 +77,7 @@ updateLastName = async () => {
 
 updateEmail = async () => {
   let to_send = {
-    first_name: this.state.firstName
+    email: this.state.email
   };
 
   const ID = await AsyncStorage.getItem('@user_id');
@@ -106,7 +106,7 @@ updateEmail = async () => {
 
 updatePassword = async () => {
   let to_send = {
-    first_name: this.state.firstName
+    password: this.state.password
   };
 
   const ID = await AsyncStorage.getItem('@user_id');
